@@ -15,9 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/projects', function() {
-    // validate
-    // persist
-    // redirect
-    App\Project::create(request(['title', 'description']));
-});
+Route::get('/projects', 'ProjectsController@index');
+
+Route::post('/projects', 'ProjectsController@store');
